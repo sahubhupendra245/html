@@ -25,4 +25,5 @@ This is the content of the second blog post...
 
 ```bash
 copy test1 test2
+ls
 ```
