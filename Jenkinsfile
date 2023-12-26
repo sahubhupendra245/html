@@ -11,10 +11,12 @@ pipeline {
 
 
      stage('SonarQube Analysis') {
+        step {
             def scannerHome = tool 'localsonarserver';
             withSonarQubeEnv() {
             sh "${scannerHome}/bin/sonar-scanner"
             }
+        }
      }
 
 
