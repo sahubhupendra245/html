@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage(Clean WS) {
+            cleanWs()
+        }
         stage('Git checkout') {
             steps {
-             script {   git branch: 'main', url: 'https://github.com/sahubhupendra245/html.git' }
+             git branch: 'main', url: 'https://github.com/sahubhupendra245/html.git'
             }
         }
         stage('Test') {
