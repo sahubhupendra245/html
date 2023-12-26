@@ -11,7 +11,9 @@ pipeline {
 
 
      stages('SonarQube Analysis') {
-            sonar.projectKey=testingpipeline
+            steps {
+                sonar.projectKey=testingpipeline
+                }
      }
 
 
