@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    environment {
-        dtoken    = credentials('DOTOKEN')
-        
-    }
+
     stages {
 
         stage('Git checkout') {
