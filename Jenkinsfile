@@ -24,8 +24,15 @@ pipeline {
                 docker push bhupendra8888/webapp:latest && \
                 docker logout'
                 }
-             
+    
 
+            }
+        }
+
+
+            stage('Deploy image in development namespace') {
+                 steps {
+                 sh 'ssh -i /opt/mads_kubernetes mads@192.168.1.100 kubectl apply -f /home/mads/edureka-project/edureka-development.yaml'
             }
         }
 
