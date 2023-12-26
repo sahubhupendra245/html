@@ -21,6 +21,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'dockerlogin', variable: 'dtoken')]) {
                 sh 'docker --version'
                 sh 'docker login -u bhupendra8888 -p $dtoken'
+                sh 'docker logout'
                 }
              
 
