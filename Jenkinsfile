@@ -12,7 +12,7 @@ pipeline {
 
      stage('SonarQube Analysis') {
             steps {
-                sonar.projectKey=testingpipeline
+                sh "${scannerHome}/bin/sonar-scanner"
                 }
      }
 
