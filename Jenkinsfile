@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        dtoken    = credentials('DOTOKEN')
+        
+    }
     stages {
 
         stage('Git checkout') {
@@ -15,6 +18,14 @@ pipeline {
              echo "testing has sepatate job"
             }
         }
+
+                stage('Creating Docker Image') {
+            steps {
+             sh 'docker --version'
+            }
+        }
+
+
      }
 
 
