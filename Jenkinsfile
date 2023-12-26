@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage(Clean WS) {
+        stage('Clean WS') {
             cleanWs()
         }
         stage('Git checkout') {
