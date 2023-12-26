@@ -12,9 +12,8 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-            def scannerHome = tool 'localsonarserver';
             withSonarQubeEnv('sonarserver') {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=testingpipeline"
             }
         }
      }
