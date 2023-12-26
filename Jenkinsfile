@@ -12,7 +12,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-            def scannerHome = tool 'localsonarserver';
+            def scannerHome = tool 'sonarserver';
             withSonarQubeEnv() {
             sh "${scannerHome}/bin/sonar-scanner"
             }
@@ -20,11 +20,7 @@ pipeline {
      }
 
 
-        
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+
         }
-    }
 }
+
