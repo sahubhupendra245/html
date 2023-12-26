@@ -21,7 +21,12 @@ pipeline {
 
                 stage('Creating Docker Image') {
             steps {
-             sh 'docker --version'
+                withCredentials([string(credentialsId: 'dockerlogin', variable: 'dtoken')]) {
+                sh 'docker --version'
+                sh 'docker login -u bhupendra8888 -p $dtoken'
+                }
+             
+
             }
         }
 
