@@ -10,8 +10,8 @@ pipeline {
         }
 
 
-     stage('SonarQube Analysis') {
-sonar.projectKey=testingpipeline
+     stages('SonarQube Analysis') {
+            sonar.projectKey=testingpipeline
      }
 
 
