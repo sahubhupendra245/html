@@ -7,4 +7,6 @@ jobs:
       - name: Print greetings
         run: echo "Hello World"
       - name: Print files
-        run: pwd
+        run: |
+          pwd
+          who
