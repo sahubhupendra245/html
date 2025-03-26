@@ -12,5 +12,5 @@ jobs:
         run: echo "Hello World"
       - name: Print files
         run: |
-          pwd && uptime
           pwd
+          uptime
