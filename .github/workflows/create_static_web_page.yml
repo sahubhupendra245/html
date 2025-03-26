@@ -1,5 +1,9 @@
 name: create static web
-on: workflow_dispatch
+on: 
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   first-job:
     runs-on: ubuntu-latest
