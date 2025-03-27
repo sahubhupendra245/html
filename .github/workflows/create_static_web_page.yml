@@ -5,7 +5,19 @@ on:
       - main
   workflow_dispatch:
 jobs:
-  first-job:
+  create-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Print files
+        run: ls -la
+      - name: Create docker image
+        run: docker build -t docker.io/bhupendra8888:latest .
+      - name: list docker images
+        run: docker images
+  
+  create-docker-image1:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
