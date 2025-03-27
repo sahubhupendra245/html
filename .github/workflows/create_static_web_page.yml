@@ -8,9 +8,11 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greetings
+      - name: Get code
         uses: actions/checkout@v3
       - name: Print files
+        run: ls -la
+      - name: Create docker image
         run: docker build -t docker.io/bhupendra8888:latest .
-      - name: list docker image
+      - name: list docker images
         run: docker images
