@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print greetings
-        run: echo "Hello World"
+        uses: actions/checkout@v3
       - name: Print files
-        run: |
-          pwd
-          uptime
+        run: docker build -t docker.io/bhupendra8888:latest .
+      - name: list docker image
+        run: docker images
