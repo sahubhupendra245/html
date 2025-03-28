@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Gitinfo
-        run: echo "${{ github }}"
+        run: echo "${{ toJSON(github) }}"
