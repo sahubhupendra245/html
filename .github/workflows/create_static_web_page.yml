@@ -1,9 +1,5 @@
 name: create static web
-on: 
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+on: [ push, workflow_dispatch]
 jobs:
   create-docker-image:
     runs-on: ubuntu-latest
@@ -17,14 +13,9 @@ jobs:
       - name: list docker images
         run: docker images
   
-  create-docker-image1:
+  Github-context:
+    needs: create-docker-image
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Print files
-        run: ls -la
-      - name: Create docker image
-        run: docker build -t docker.io/bhupendra8888:latest .
-      - name: list docker images
-        run: docker images
+      - name: Gitinfo
+        run: ${{ github }}
