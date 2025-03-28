@@ -12,7 +12,6 @@ jobs:
         run: docker build -t docker.io/bhupendra8888:latest .
       - name: list docker images
         run: docker images
-  
   Github-context:
     needs: create-docker-image
     runs-on: ubuntu-latest
